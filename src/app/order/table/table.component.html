@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="main-heading">Tables</h1>
+    </div>
+  </div>
+  <div class="row align-items-end">
+    <div class="col-md-6 col-lg-4" *ngFor="let table of tables">
+      <mat-card>
+        <mat-card-title routerLink="{{table.id}}">
+          <code>{{table.total | number}}</code>Table #{{table.id}}</mat-card-title>
+        <mat-card-subtitle>
+          Modern powerful framework
+        </mat-card-subtitle>
+        <mat-card-actions>
+          <a mat-button routerLink="{{table.id}}">
+            <i class="material-icons">edit</i> Edit
+          </a>
+          <a mat-button *ngIf="table.total > 0" (click)="createNewInvoice(table.id)">
+            <i class="material-icons">monetization_on</i> Pay
+          </a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
