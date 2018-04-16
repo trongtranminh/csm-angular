@@ -8,10 +8,8 @@
     <div class="col-md-6 col-lg-4" *ngFor="let table of tables">
       <mat-card>
         <mat-card-title routerLink="{{table.id}}">
-          <code>{{table.total | number}}</code>Table #{{table.id}}</mat-card-title>
-        <mat-card-subtitle>
-          Modern powerful framework
-        </mat-card-subtitle>
+          <code>{{table.total | number}}</code>Table #{{table.id}}
+        </mat-card-title>
         <mat-card-actions>
           <a mat-button routerLink="{{table.id}}">
             <i class="material-icons">edit</i> Edit

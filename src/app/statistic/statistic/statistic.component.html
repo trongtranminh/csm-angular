@@ -47,10 +47,10 @@
       </mat-card>
     </div>
   </div>
-  <div class="row" *ngIf="total">
+  <div class="row">
     <div class="col-md-12 col-lg-12">
       <mat-card>
-        <mat-card-title>
+        <mat-card-title *ngIf="total">
           Total: <code>{{total | number}}</code>
         </mat-card-title>
         <mat-card-content>
