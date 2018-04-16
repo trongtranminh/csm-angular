@@ -4,8 +4,8 @@
       <h1 class="main-heading">Statistic</h1>
     </div>
   </div>
-  <div class="row align-items-start">
-    <div class="col-md-6 col-lg-4">
+  <div class="row">
+    <div class="col-md-12 col-lg-12">
       <mat-card>
         <mat-card-title>
           View by
@@ -46,8 +46,13 @@
         </mat-card-actions>
       </mat-card>
     </div>
-    <div class="col-md-6 col-lg-8">
+  </div>
+  <div class="row" *ngIf="total">
+    <div class="col-md-12 col-lg-12">
       <mat-card>
+        <mat-card-title>
+          Total: <code>{{total | number}}</code>
+        </mat-card-title>
         <mat-card-content>
           <div *ngIf="chart">
             <canvas id="canvas">{{ chart }}</canvas>

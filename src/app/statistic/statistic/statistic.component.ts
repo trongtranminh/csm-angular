@@ -15,6 +15,7 @@ export class StatisticComponent implements OnInit {
   chart = [];
   result: Income[];
   selectedType: number;
+  total: number;
   today = new Date();
   date = new FormControl(this.today);
   month = this.today.getMonth()+1;
@@ -53,11 +54,19 @@ export class StatisticComponent implements OnInit {
     if (this.selectedType == 2) time = new Date(this.today.getFullYear(), this.month) 
     if (this.selectedType == 3) time = new Date(this.year, 1);
 
-    
     this.incomeService.getIncomeByType(this.selectedType, time)
-    .subscribe(res => this.createChart(res));
+    .subscribe(res => {
+      this.createChart(res);
+      this.getTotal(res);
+    });
   }
 
+  getTotal(res: any){
+    this.total = 0;
+    res.forEach(element => {
+      this.total += element.total;
+    });
+  }
 
   createChart(res: any) {
     let total = res.map(res => res.total);
