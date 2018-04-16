@@ -28,7 +28,6 @@
 @mixin custom-components-theme($theme) {
   @include anms-styles-reset-theme($theme);
   @include anms-app-component-theme($theme);
-  @include anms-about-component-theme($theme);
   @include anms-big-input-component-theme($theme);
   @include anms-todos-component-theme($theme);
   @include anms-stock-market-component-theme($theme);
