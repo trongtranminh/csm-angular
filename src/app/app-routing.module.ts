@@ -8,7 +8,7 @@ import { ManageProductComponent } from '@app/product';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'about',
+    redirectTo: 'order',
     pathMatch: 'full'
   },
   {
@@ -42,7 +42,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'about'
+    redirectTo: 'order'
   }
 ];
 
