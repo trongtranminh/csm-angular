@@ -50,7 +50,10 @@ export class StatisticComponent implements OnInit {
 
   getStatistic(){
     let time = new Date();
-    if (this.selectedType == 1) time = this.date.value 
+    if (this.selectedType == 1) {
+      time = new Date(this.date.value);
+      time.setHours(12);
+    }
     if (this.selectedType == 2) time = new Date(this.today.getFullYear(), this.month) 
     if (this.selectedType == 3) time = new Date(this.year, 1);
 
