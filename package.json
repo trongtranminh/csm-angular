@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "npm run lint && ng test --single-run",
     "lint": "ng lint",
@@ -15,7 +15,8 @@
     "server": "cd dist && http-server",
     "prod": "npm run clean && npm run build:prod && npm run server",
     "ci": "npm run clean && npm run prettier:ci && ng lint && ng test --browser ChromeTravisCi --single-run --reporters spec --environment prod && ng e2e && npm run build:prod -- --deploy-url /angular-ngrx-material-starter/ --base-href /angular-ngrx-material-starter",
-    "release": "standard-version && git push --follow-tags origin master"
+    "release": "standard-version && git push --follow-tags origin master",
+    "postinstall": "ng build --prod"
   },
   "private": true,
   "dependencies": {
