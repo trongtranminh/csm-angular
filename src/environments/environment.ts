@@ -9,7 +9,7 @@ export const environment = {
   appName: 'Coffee shop Manager',
   envName: 'DEV',
   production: false,
-  apiUrl: 'https://csmrestapi.azurewebsites.net/api/',
+  apiUrl: 'https://csmnetclient.azurewebsites.net/api/',
   versions: {
     app: packageJson.version,
     angular: packageJson.dependencies['@angular/core'],
